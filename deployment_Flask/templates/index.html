@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var img = document.getElementById('image-preview');
+                img.src = reader.result;
+                img.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+    <style>
+        /* Center the form container */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://media.istockphoto.com/id/1251244145/photo/human-respiratory-system-lungs-anatomy.jpg?s=2048x2048&w=is&k=20&c=kfKkinKwWjjgWz0qFHrcYol8qS24eCNYhaVd4VQsAKA='); /* Replace 'your-image-url.jpg' with the URL of your background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Style the form */
+        .form {
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the file input */
+        .file-input {
+            margin-bottom: 10px;
+        }
+
+        /* Style the image preview */
+        .image-preview {
+            max-width: 300px;
+            max-height: 300px;
+            margin-top: 20px;
+            display: none;
+            border-radius: 10px;
+        }
+
+        /* Style the prediction result */
+        .prediction {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form">
+            <h2>Upload Image</h2>
+            <form id="upload-form" action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" onchange="previewImage(event)" class="file-input">
+                <br>
+                <input type="submit" value="Predict" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+            </form>
+            <img id="image-preview" class="image-preview" src="#" alt="Image Preview">
+            <div id="prediction" class="prediction">
+                {% if prediction %}
+                {{ prediction }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
