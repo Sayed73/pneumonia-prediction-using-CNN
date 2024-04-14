@@ -10,6 +10,5 @@ I have created a pneumonia prediction deep learning model using a convolutional 
 ![Screenshot 2024-04-14 140903](https://github.com/Sayed73/pneumonia-prediction-using-CNN/assets/105808002/9aaf924f-7231-4e95-a2b2-d74a3dc7d138)
 
 ## Pheumonia Case Testing
-
-![Screenshot 2024-04-14 141031](https://github.com/Sayed73/pneumonia-prediction-using-CNN/assets/105808002/c9048782-42e8-4ace-84fd-58dc10673898)
 ![Screenshot 2024-04-14 140956](https://github.com/Sayed73/pneumonia-prediction-using-CNN/assets/105808002/8425ca7c-328e-4be5-8627-5f7509c93fd0)
+![Screenshot 2024-04-14 141031](https://github.com/Sayed73/pneumonia-prediction-using-CNN/assets/105808002/c9048782-42e8-4ace-84fd-58dc10673898)
